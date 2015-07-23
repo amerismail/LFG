@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LFG.Model
 {
-    class Activity
+    public class Activity
     {
         [Key]
         public int Id { get; set; }
