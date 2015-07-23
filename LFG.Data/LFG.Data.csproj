@@ -49,6 +49,7 @@
     <Compile Include="EFRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="LfgDbContext.cs" />
+    <Compile Include="LfgUow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
