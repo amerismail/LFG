@@ -7,7 +7,7 @@ using LFG.Model;
 
 namespace LFG.Data
 {
-    class LfgUow : IDisposable
+    public class LfgUow : IDisposable
     {
         private LfgDbContext DbContext { get; set; }
         
