@@ -40,6 +40,10 @@ namespace LFG.Data
             {
                 dbEntityEntry.State = EntityState.Added;
             }
+            else
+            {
+                DbSet.Add(entity);
+            }
         }
 
         public virtual void Update(T entity)
