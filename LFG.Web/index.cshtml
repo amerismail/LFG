@@ -1,0 +1,21 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LFG</title>
+</head>
+<body>
+
+    <div class="firstExample">
+        <p>Name: <input data-bind="value: name" /></p>
+                 <text data-bind="text: name" />
+    </div>
+
+    @Scripts.Render(
+                "~/Scripts/lib/knockout-3.3.0.js",
+                "~/Scripts/app/vm.activity.js"
+    )
+</body>
+</html>
