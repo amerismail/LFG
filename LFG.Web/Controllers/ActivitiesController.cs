@@ -27,5 +27,16 @@ namespace LFG.Web.Controllers
             return Uow.Activities.GetAll().OrderBy(s => s.Name);
         }
 
+        public HttpResponseMessage Post(Activity activity)
+        {
+            Uow.Activities.Add(activity);
+            Uow.Commit();
+
+            var response = Request.CreateResponse(HttpStatusCode.Created, activity);
+
+            response.Headers.Location = new Uri(Url.Link(RouteConfig.ControllerAndId, new { id = activity.Id }));
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
+        }
+
     }
 }
