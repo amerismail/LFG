@@ -10,10 +10,13 @@
 
     <div class="firstExample">
         <p>Name: <input data-bind="value: name" /></p>
-                 <text data-bind="text: name" />
+                 <input type="date" data-bind="value: date" />
     </div>
 
+    <button data-bind="click: save"> Save </button>
+    
     @Scripts.Render(
+                "~/Scripts/lib/jquery-2.1.4.min.js",
                 "~/Scripts/lib/knockout-3.3.0.js",
                 "~/Scripts/app/vm.activity.js"
     )
