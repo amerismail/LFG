@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width" />
     <title>LFG</title>
 </head>
+    
 <body>
 
-    <div class="firstExample">
-        <p>Name: <input data-bind="value: name" /></p>
-                 <input type="date" data-bind="value: date" />
+    <nav id="shellTop-view" class="main-nav">
+        
+        
+    </nav>
+    
+    
+    <div id="main">
+         
     </div>
 
     <button data-bind="click: save"> Save </button>
@@ -18,7 +24,10 @@
     @Scripts.Render(
                 "~/Scripts/lib/jquery-2.1.4.min.js",
                 "~/Scripts/lib/knockout-3.3.0.js",
+                "~/Scripts/lib/sammy-0.7.5.min.js", 
+                "~/Scripts/router.js",
                 "~/Scripts/app/vm.activity.js"
     )
 </body>
+
 </html>
