@@ -253,14 +253,26 @@
     <Content Include="Areas\Content\toastr.less" />
     <Content Include="Home.html" />
     <Content Include="index.cshtml" />
-    <Content Include="Scripts\app\script.js" />
-    <Content Include="Scripts\lib\jqwidgets\index.htm" />
-    <Content Include="Scripts\lib\jqwidgets\ReadMe.txt" />
-    <Content Include="Scripts\lib\jqwidgets\ReleaseNotes.txt" />
+    <Content Include="Scripts\app\list_activities.js" />
+    <None Include="Scripts\lib\jquery-2.1.0-vsdoc.js" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap-theme.css" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap.css" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap.min.css" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\js\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\js\bootstrap.min.js" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\js\npm.js" />
     <Content Include="Scripts\app\navbar.js" />
     <Content Include="Scripts\lib\sammy-0.7.5.js" />
     <Content Include="Scripts\lib\sammy-0.7.5.min.js" />
     <Content Include="Scripts\router.js" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap.css.map" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\lib\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\lib\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\lib\jquery-2.1.4.js" />
     <Content Include="Scripts\lib\jquery-2.1.4.min.js" />
@@ -310,9 +322,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Scripts\lib\jqwidgets\EULA.pdf" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
