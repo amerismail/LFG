@@ -5,28 +5,48 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>LFG</title>
+
+    @Styles.Render(
+        "~/Scripts/lib/bootstrap-3.3.5/css/bootstrap.min.css"
+    )
 </head>
     
 <body>
-
-    <nav id="shellTop-view" class="main-nav">
-        
-        
-    </nav>
-    
-    
-    <div id="main">
-         
+    <div id="nav">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/" id="nav-title">Looking for Group</a>
+                </div>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active" id="nav-home"><a href="#/">Home</a></li>
+                        <li><a href="#/create">Create</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-
+    
+    <div id="main"></div>
     
     @Scripts.Render(
-                "~/Scripts/lib/jquery-2.1.4.min.js",
-                "~/Scripts/lib/knockout-3.3.0.js",
-                "~/Scripts/lib/sammy-0.7.5.min.js", 
-                "~/Scripts/router.js",
-                "~/Scripts/app/vm.activity.js"
+        "~/Scripts/lib/jquery-2.1.4.min.js",
+        "~/Scripts/lib/knockout-3.3.0.js",
+        "~/Scripts/lib/sammy-0.7.5.min.js", 
+        "~/Scripts/router.js",
+        "~/Scripts/app/vm.activity.js",
+        "~/Scripts/lib/bootstrap-3.3.5/js/bootstrap.min.js",
+        "~/Scripts/app/navbar.js"      
     )
 </body>
-
 </html>
