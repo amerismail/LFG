@@ -18,7 +18,7 @@ var save = function(vm) {
         data: vm,
         dataType: "json",
         success: function () {
-            console.log("It worked");
+            window.location.replace("#/");
         }
     });
 };
