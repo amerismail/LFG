@@ -235,6 +235,7 @@
     <Content Include="Areas\Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Areas\Content\toastr.css" />
     <Content Include="Areas\Content\toastr.min.css" />
+    <Content Include="CreateActivity.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -305,7 +306,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scripts\lib\jqwidgets\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
