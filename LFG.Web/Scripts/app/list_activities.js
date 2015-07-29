@@ -1,9 +1,13 @@
 ﻿$(document).ready(function () {
+    $('#loader').show();
     $.ajax({
         url: "api/activities",
         contentType: 'application/json',
         method: "GET",
         dataType: "json",
+        complete: function () {
+            $('#loader').hide();
+        },
         success: function (listOfActivities) {
             updateDom(listOfActivities);
         }
