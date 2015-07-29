@@ -253,14 +253,11 @@
     <Content Include="Areas\Content\toastr.less" />
     <Content Include="Home.html" />
     <Content Include="index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Scripts\app\script.js" />
     <Content Include="Scripts\lib\jqwidgets\index.htm" />
     <Content Include="Scripts\lib\jqwidgets\ReadMe.txt" />
     <Content Include="Scripts\lib\jqwidgets\ReleaseNotes.txt" />
-=======
     <Content Include="Scripts\app\navbar.js" />
->>>>>>> 5a2a04ddba3cd1822fcab69ebd157de779a1243d
     <Content Include="Scripts\lib\sammy-0.7.5.js" />
     <Content Include="Scripts\lib\sammy-0.7.5.min.js" />
     <Content Include="Scripts\router.js" />
