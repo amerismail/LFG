@@ -7,7 +7,8 @@
     <title>LFG</title>
 
     @Styles.Render(
-        "~/Scripts/lib/bootstrap-3.3.5/css/bootstrap.min.css"
+        "~/Scripts/lib/bootstrap-3.3.5/css/bootstrap.min.css",
+        "~/Scripts/app.css"
     )
 </head>
     
@@ -37,7 +38,9 @@
         </nav>
     </div>
     
-    <div id="main"></div>
+    <div class="content">
+        <div id="main"></div>
+    </div>
     
     @Scripts.Render(
         "~/Scripts/lib/jquery-2.1.4.min.js",
@@ -46,7 +49,7 @@
         "~/Scripts/router.js",
         "~/Scripts/app/vm.activity.js",
         "~/Scripts/lib/bootstrap-3.3.5/js/bootstrap.min.js",
-        "~/Scripts/app/navbar.js"      
+        "~/Scripts/app/navbar.js"
     )
 </body>
 </html>

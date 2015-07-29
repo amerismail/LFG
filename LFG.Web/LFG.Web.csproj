@@ -254,6 +254,7 @@
     <Content Include="Home.html" />
     <Content Include="index.cshtml" />
     <Content Include="Scripts\app\script.js" />
+    <Content Include="Scripts\app.css" />
     <Content Include="Scripts\lib\jqwidgets\index.htm" />
     <Content Include="Scripts\lib\jqwidgets\ReadMe.txt" />
     <Content Include="Scripts\lib\jqwidgets\ReleaseNotes.txt" />
