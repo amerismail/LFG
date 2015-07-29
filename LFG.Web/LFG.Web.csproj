@@ -253,6 +253,7 @@
     <Content Include="Areas\Content\toastr.less" />
     <Content Include="Home.html" />
     <Content Include="index.cshtml" />
+    <Content Include="Scripts\app\navbar.js" />
     <Content Include="Scripts\lib\sammy-0.7.5.js" />
     <Content Include="Scripts\lib\sammy-0.7.5.min.js" />
     <Content Include="Scripts\router.js" />
