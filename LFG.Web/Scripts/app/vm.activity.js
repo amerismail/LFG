@@ -1,17 +1,15 @@
-﻿var ViewModel = function () {
-    this.name = ko.observable();
-    this.date = ko.observable();
+﻿var ActivityViewModel = {
+    name: ko.observable(),
+    date: ko.observable(),
 
-    this.save = function(){
+    save: function() {
         save(ko.toJSON(this));
     }
 };
 
-ko.applyBindings(new ViewModel());
-
 var save = function(vm) {
     console.log(vm);
-        $.ajax({
+    $.ajax({
         url: "api/activities",
         contentType: 'application/json',
         method: "POST",
@@ -22,3 +20,5 @@ var save = function(vm) {
         }
     });
 };
+
+ko.applyBindings(ActivityViewModel, document.getElementById("CreateActivity-view"));
