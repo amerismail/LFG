@@ -18,7 +18,7 @@
 
         for(var i = 0; i < jsonObj[0].length; i++)
         {
-            $('#Test tr:last').after('<tr class="info"><td>' + jsonObj[0][i].Name + '</td>' + '<td>' + jsonObj[0][i].Date + '</td></tr>');
+            $('#Test tr:last').after('<tr class="info"><td>' + jsonObj[0][i].Name + '</td><td>' + jsonObj[0][i].GameSystem.Name + '</td><td>' + jsonObj[0][i].CreateTS + '</td></tr>');
         }       
     }
 });

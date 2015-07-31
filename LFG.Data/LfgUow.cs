@@ -17,6 +17,7 @@ namespace LFG.Data
         }
 
         public IRepository<Activity> Activities { get { return new EFRepository<Activity>(DbContext); } }
+        public IRepository<GameSystem> GameSystems { get { return new EFRepository<GameSystem>(DbContext); } }
 
         public void Commit()
         {
@@ -26,8 +27,8 @@ namespace LFG.Data
         protected void CreateDbContext()
         {
             DbContext = new LfgDbContext();
-            DbContext.Configuration.ProxyCreationEnabled = false;
-            DbContext.Configuration.LazyLoadingEnabled = false;
+            DbContext.Configuration.ProxyCreationEnabled = true;
+            DbContext.Configuration.LazyLoadingEnabled = true;
             DbContext.Configuration.ValidateOnSaveEnabled = false;
         }
 

@@ -1,6 +1,5 @@
 ﻿using LFG.Data;
 using LFG.Model;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +24,7 @@ namespace LFG.Web.Controllers
         // GET api/activity
         public IEnumerable<Activity> Get()
         {
-            return Uow.Activities.GetAll().OrderBy(s => s.Date);
+            return Uow.Activities.GetAll().OrderBy(s => s.CreateTS);
         }
 
         // GET api/activity/5
