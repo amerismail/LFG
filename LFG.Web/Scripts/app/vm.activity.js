@@ -40,18 +40,4 @@ var ActivityViewModel = function() {
     }
 };
 
-var save = function(vm) {
-    console.log(vm);
-    $.ajax({
-        url: "api/activities",
-        contentType: 'application/json',
-        method: "POST",
-        data: vm,
-        dataType: "json",
-        success: function () {
-            window.location.replace("#/");
-        }
-    });
-};
-
 ko.applyBindings(ActivityViewModel, document.getElementById("CreateActivity-view"));
