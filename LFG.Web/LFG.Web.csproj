@@ -258,6 +258,7 @@
     <Content Include="Content\app.css" />
     <Content Include="Scripts\app\list_activities.js" />
     <None Include="Scripts\lib\jquery-2.1.0-vsdoc.js" />
+    <Content Include="Scripts\app\vm.search.js" />
     <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap-theme.css" />
     <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\lib\bootstrap-3.3.5\css\bootstrap.css" />

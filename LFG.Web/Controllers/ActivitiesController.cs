@@ -27,6 +27,21 @@ namespace LFG.Web.Controllers
             return Uow.Activities.GetAll().OrderBy(s => s.CreateTS);
         }
 
+        public IEnumerable<Activity> Search(ActivitiesSearch activitiesSearch)
+        {
+            IEnumerable<Activity> result = Uow.Activities.GetAll().OrderBy(s => s.CreateTS);
+
+            if (activitiesSearch != null)
+            {
+                if (activitiesSearch.Name != null)
+                {
+                    result = result.Where(t => t.Name.Contains(activitiesSearch.Name));
+                }
+            }
+
+            return result;
+        }
+
         // GET api/activity/5
         public Activity Get(int id)
         {
@@ -34,7 +49,7 @@ namespace LFG.Web.Controllers
         }
 
         // POST api/activity
-        public HttpResponseMessage Post(Activity activity)
+        public HttpResponseMessage Save(Activity activity)
         {
             Uow.Activities.Add(activity);
             Uow.Commit();

@@ -3,10 +3,14 @@
 
 <head>
     <title id='Description'>Test</title>
-    <script type="text/javascript" src="Scripts/app/list_activities.js"></script>
 </head>
 
 <body class='default'>
+    <span id="Search">
+        <button type="submit" class="btn btn-default search-btn" data-bind="click: search">Search</button>
+        <span><input class="form-control" id="name" placeholder="Name" data-bind="value: name"> </span>
+    </span>
+
     <table id="Test" class="table table-striped table-hover ">
         <thead>
             <tr>
@@ -20,3 +24,6 @@
     </table> 
 </body>
 </html>
+
+<script src="Scripts/app/list_activities.js"></script>
+<script src="Scripts/app/vm.search.js"></script>
