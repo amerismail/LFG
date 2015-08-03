@@ -33,9 +33,14 @@ namespace LFG.Web.Controllers
 
             if (activitiesSearch != null)
             {
-                if (activitiesSearch.Name != null)
+                if (!string.IsNullOrEmpty(activitiesSearch.Name))
                 {
-                    result = result.Where(t => t.Name.Contains(activitiesSearch.Name));
+                    result = result.Where(t => t.Name.Contains(activitiesSearch.Name, StringComparison.OrdinalIgnoreCase));
+                }
+
+                if (activitiesSearch.ConsoleID != -1)
+                {
+                    result = result.Where(t => t.ConsoleId.Equals(activitiesSearch.ConsoleID));
                 }
             }
 

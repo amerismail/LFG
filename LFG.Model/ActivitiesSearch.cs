@@ -9,7 +9,7 @@ namespace LFG.Model
     public class ActivitiesSearch
     {
         public string Name { get; set; }
-        public string Console { get; set; }
+        public int ConsoleID { get; set; }
         public string Game { get; set; }
         public bool Microphone { get; set; }
     }

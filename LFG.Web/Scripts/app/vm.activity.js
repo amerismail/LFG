@@ -26,9 +26,10 @@ var ActivityViewModel = function() {
     });
 
     self.save = function () {
-        var body = '{"Name":' + ko.toJSON(self.Name) + ',"ConsoleId":' + ko.toJSON(self.ConsoleId) + '}';
+        var body = (ko.toJSON({ Name: this.Name, ConsoleId: this.ConsoleId }));
+        console.log(body);
         $.ajax({
-            url: "api/activities",
+            url: "api/activities/Save",
             contentType: 'application/json',
             method: "POST",
             data: body,
