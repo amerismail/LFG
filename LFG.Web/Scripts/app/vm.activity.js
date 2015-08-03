@@ -7,8 +7,12 @@
 var ActivityViewModel = function() {
     var self = this;
 
-    self.Name = ko.observable();
     self.ConsoleId = ko.observable();
+    self.Game = ko.observable();
+    self.Name = ko.observable();
+    self.Mic = ko.observable();
+    self.Owner = ko.observable();
+
     self.GameSystemArray = ko.observableArray([]);
 
     $.ajax({
@@ -26,7 +30,7 @@ var ActivityViewModel = function() {
     });
 
     self.save = function () {
-        var body = (ko.toJSON({ Name: this.Name, ConsoleId: this.ConsoleId }));
+        var body = (ko.toJSON({ ConsoleId: this.ConsoleId, Game: this.Game, Name: this.Name, Mic: this.Mic, Owner: this.Owner }));
         console.log(body);
         $.ajax({
             url: "api/activities/Save",

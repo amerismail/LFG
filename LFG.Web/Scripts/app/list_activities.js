@@ -15,6 +15,34 @@
         });
     }
 
+    var stringEnding = function(number) {
+        if (number > 1) 
+            return 's';
+        return '';
+    }
+
+    var getTimeDifference = function (date) {
+        var millis = (new Date()).getTime() - (new Date(date)).getTime();
+        console.log(millis);
+
+        var seconds = parseInt(millis / 60000);
+        var hours = parseInt(seconds / 60);
+        var days = parseInt(hours / 24);
+
+        if (seconds == 0) {
+            return 'now';
+        }
+        else if (seconds < 60) {
+            return (seconds + ' second' + stringEnding(seconds) + ' ago');
+        }
+        else if (hours < 24) {
+            return (hours + ' hour' + stringEnding(hours) + ' ago');
+        }
+        else {
+            return (days + ' day' + stringEnding(days) + ' ago');
+        }
+    }
+
     var updateDom = function (listOfActivities) {
         var jsonObj = $.parseJSON('[' + JSON.stringify(listOfActivities) + ']');
 
@@ -22,9 +50,23 @@
 
         for(var i = 0; i < jsonObj[0].length; i++)
         {
-            $('#activitiesList').append('<tr class="info"><td>' + jsonObj[0][i].Name + '</td><td>' + jsonObj[0][i].GameSystem.Name + '</td><td>' + jsonObj[0][i].CreateTS + '</td></tr>');
-        }
+            var text = '✓';
+            if (!jsonObj[0][i].Mic)
+                text = 'X';
 
+            var diff = getTimeDifference(jsonObj[0][i].CreateTS);
+
+            $('#activitiesList').append(
+                '<tr>' +
+                    '<td>' + jsonObj[0][i].GameSystem.Name + '</td>' +
+                    '<td>' + jsonObj[0][i].Game + '</td>' +
+                    '<td>' + jsonObj[0][i].Name + '</td>' +
+                    '<td>' + text + '</td>' + 
+                    '<td>' + jsonObj[0][i].Owner + '</td>' +
+                    '<td>' + diff + '</td>' +
+                '</tr>'
+            );
+        }
     }
 
     getList("");

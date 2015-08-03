@@ -14,6 +14,14 @@
     float: right;
 }
 
+tr:nth-child(even) {
+    background-color: rgb(196, 227, 243);
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
 #Test th{
     font-weight:bold;
     cursor:pointer;
