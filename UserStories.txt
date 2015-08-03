@@ -11,7 +11,7 @@ Search Bar to search by Microphone,Game
 
 FrontEnd:
 Dynamic Ui to see whose joining the group and whose not
-Sort table by ascending/descending
+✓Sort table by ascending/descending
 
 
 Future Enhancements:
