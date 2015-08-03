@@ -13,3 +13,19 @@
 .search-btn{
     float: right;
 }
+
+#Test th{
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#Test th.asc:after{
+    content:'\2191';
+    display:inline-block;
+    color:red;
+}
+#Test th.desc:after{
+    content:'\2193';
+    display:inline-block;
+    color:blue;
+}

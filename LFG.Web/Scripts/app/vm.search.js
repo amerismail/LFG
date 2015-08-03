@@ -14,7 +14,6 @@ var getConsoleData = function () {
         dataType: "json",
         success: function (json) {
             $.each(json, function (index, value) {
-                console.log(value);
                 array.push(new GameSystem(value));
             });
         }
@@ -35,7 +34,6 @@ var ActivitySearchViewModel = {
 
    
 var search = function (data) {
-    console.log(data);
     getList(data);
 };
 

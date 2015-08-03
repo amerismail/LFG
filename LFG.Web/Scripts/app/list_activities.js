@@ -18,12 +18,13 @@
     var updateDom = function (listOfActivities) {
         var jsonObj = $.parseJSON('[' + JSON.stringify(listOfActivities) + ']');
 
-        console.log(jsonObj);
-        $('#Test tr').not(function () { if ($(this).has('th').length) { return true } }).remove();
+        $("#activitiesList tr").remove();
+
         for(var i = 0; i < jsonObj[0].length; i++)
         {
-            $('#Test tr:last').after('<tr class="info"><td>' + jsonObj[0][i].Name + '</td><td>' + jsonObj[0][i].GameSystem.Name + '</td><td>' + jsonObj[0][i].CreateTS + '</td></tr>');
-        }       
+            $('#activitiesList').append('<tr class="info"><td>' + jsonObj[0][i].Name + '</td><td>' + jsonObj[0][i].GameSystem.Name + '</td><td>' + jsonObj[0][i].CreateTS + '</td></tr>');
+        }
+
     }
-    
+
     getList("");
