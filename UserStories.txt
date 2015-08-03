@@ -1,10 +1,19 @@
 BackEnd:
-Activities are associated with a console
+✓Activities are associated with a console
 Activities have a persons Gamertag/Psn/Steam name for the person who created them
 Activities will have a option for microphone or not
 Each activity is associated with a game
-Search Bar To search by anything
+✓Search Bar To search by Activity Name, Console 
+Search Bar to search by Microphone,Game
+
+
 
 
 FrontEnd:
 Dynamic Ui to see whose joining the group and whose not
+Sort table by ascending/descending
+
+
+Future Enhancements:
+Add User Logins
+Joining an activity???
