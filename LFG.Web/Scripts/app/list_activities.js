@@ -10,13 +10,14 @@
                 $('#loader').hide();
             },
             success: function (listOfActivities) {
+                console.log(listOfActivities);
                 updateDom(listOfActivities);
             }
         });
     }
 
-    var stringEnding = function(number) {
-        if (number > 1) 
+    var stringEnding = function (number) {
+        if (number > 1)
             return 's';
         return '';
     }
@@ -43,13 +44,23 @@
         }
     }
 
+    var tableSorter = function (length) {
+
+        var id = setInterval(function () {
+            if ($("table#Test tbody tr").length == length) {
+                console.log("Test");
+                $("table#Test").trigger("update");
+                window.clearInterval(id);
+            }
+        }, 50);
+    }
+
     var updateDom = function (listOfActivities) {
         var jsonObj = $.parseJSON('[' + JSON.stringify(listOfActivities) + ']');
 
         $("#activitiesList tr").remove();
 
-        for(var i = 0; i < jsonObj[0].length; i++)
-        {
+        for (var i = 0; i < jsonObj[0].length; i++) {
             var text = '✓';
             if (!jsonObj[0][i].Mic)
                 text = 'X';
@@ -57,16 +68,19 @@
             var diff = getTimeDifference(jsonObj[0][i].CreateTS);
 
             $('#activitiesList').append(
-                '<tr>' +
+                '<tr">' +
                     '<td>' + jsonObj[0][i].GameSystem.Name + '</td>' +
                     '<td>' + jsonObj[0][i].Game + '</td>' +
                     '<td>' + jsonObj[0][i].Name + '</td>' +
-                    '<td>' + text + '</td>' + 
+                    '<td>' + text + '</td>' +
                     '<td>' + jsonObj[0][i].Owner + '</td>' +
                     '<td>' + diff + '</td>' +
                 '</tr>'
-            );
+            )
         }
+
+        tableSorter(jsonObj[0].length);
     }
 
+    $("#Test").tablesorter();
     getList("");

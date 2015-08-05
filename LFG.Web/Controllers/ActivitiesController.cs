@@ -42,6 +42,16 @@ namespace LFG.Web.Controllers
                 {
                     result = result.Where(t => t.ConsoleId.Equals(activitiesSearch.ConsoleID));
                 }
+
+                if (activitiesSearch.Game != null)
+                {
+                    result = result.Where(t => t.Game.Contains(activitiesSearch.Game, StringComparison.OrdinalIgnoreCase));
+                }
+
+                if (activitiesSearch.Microphone)
+                {
+                    result = result.Where(t => t.Mic.Equals(activitiesSearch.Microphone));
+                }
             }
 
             return result;

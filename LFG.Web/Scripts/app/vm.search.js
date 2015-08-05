@@ -23,12 +23,14 @@ var getConsoleData = function () {
 
 
 var ActivitySearchViewModel = {
-    Name: ko.observable(),
+    name: ko.observable(),
     consoleList: ko.observableArray(getConsoleData()),
     consoleId: ko.observable(),
+    microphone: ko.observable(),
+    game: ko.observable(),
 
     search: function () {
-        search(ko.toJSON({Name: this.Name , ConsoleId: this.consoleId}));
+        search(ko.toJSON({Name: this.name , ConsoleId: this.consoleId , Game: this.game , Microphone: this.microphone}));
     }
 };
 
