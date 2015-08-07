@@ -173,7 +173,6 @@
       <DependentUpon>LFG_Database.mdf</DependentUpon>
     </Content>
     <Content Include="Content\loader.css" />
-    <Content Include="CreateActivity.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Home.html" />

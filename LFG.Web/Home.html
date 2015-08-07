@@ -6,34 +6,122 @@
 </head>
 
 <body class='default'>
-    <span id="Search">
-        <button type="submit" class="btn btn-default search-btn" data-bind="click: search">Search</button>
-        <span>
-            <input class="form-control" id="name" placeholder="Name" data-bind="value: name">
-            <select class="form-control" id="gamesystem-selector" data-bind="options: consoleList,
+
+    <div class="container">
+        <div class="modal fade" id="createForm" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Create Activity</h4>
+                    </div>
+                    <form class="form-horizontal" role="form">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="ConsoleId">Platform:</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="gamesystem-selector" data-bind="options: GameSystemArray,
                                                                                      optionsText: 'name',
                                                                                      optionsValue: 'id',
-                                                                                     value: consoleId">
-            </select>
-            <input class="form-control" id="game" placeholder="Game" data-bind="value: game">
-            <input type="checkbox"  id="microphone" data-bind="checked: microphone">
-</span>
-    </span>
+                                                                                     value: ConsoleId"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="Game">Game:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="game" placeholder="Game" data-bind="value: Game">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="Name">Name of Activity:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="name" placeholder="Name" data-bind="value: Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="Mic">Microphone:</label>
+                                <div class="col-sm-10">
+                                    <input type="checkbox" class="form-control" id="mic" data-bind="checked: Mic">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="Owner">Owner:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="owner" placeholder="Gamertag/PSN/Steam" data-bind="value: Owner">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="pull-right">
+                                <button id="save-btn" type="submit" data-dismiss="modal" class="btn btn-primary" data-bind="click: save">Save</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <table id="Test" class="table table-striped">
-        <thead>
-            <tr>
-                <th>Platform</th>
-                <th>Game</th>
-                <th>Activity</th>
-                <th>Microphone</th>
-                <th>Creator</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody id="activitiesList"></tbody>
-    </table>
+    <div id="Search">
+        <div class="well">
+            <form class="form-horizontal" name="filterForm">
+                <fieldset>
+                    <div class="form-group-sm">
+                        <label class="col-md-2 control-label" for="gamesystem-selector">Platform</label>
+                        <div class="col-md-10">
+                            <select class="form-control" id="gamesystem-selector" data-bind="options: consoleList,
+                                                                                                        optionsText: 'name',
+                                                                                                        optionsValue: 'id',
+                                                                                                        value: consoleId"></select>
+                        </div>
+                    </div>
+                    <div class="form-group-sm">
+                        <label class="col-md-2 control-label" for="game">Game</label>
+                        <div class="col-md-10">
+                            <input class="form-control" id="game" placeholder="Game" data-bind="value: game">
+                        </div>
+                    </div>
+                    <div class="form-group-sm">
+                        <label class="col-md-2 control-label" for="name">Activity</label>
+                        <div class="col-md-10">
+                            <input class="form-control" id="name" placeholder="Activity" data-bind="value: name">
+                        </div>
+                    </div>
+                    <div class="form-group-sm">
+                        <label class="col-md-2 control-label" for="microphone">Microphone</label>
+                        <div class="col-md-10">
+                            <input type="checkbox" id="microphone" data-bind="checked: microphone">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-info" data-bind="click: search">Search</button>
+                                <button type="submit" class="btn btn-default">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary create-button" data-toggle="modal" data-target="#createForm">Create Activity</button>
+    
+    <div class="panel panel-primary">
+        <table id="Test" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>Game</th>
+                    <th>Activity</th>
+                    <th>Microphone</th>
+                    <th>Creator</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="activitiesList"></tbody>
+        </table>
+    </div>
 
     <script src="/bundles/home"></script>
+
 </body>
 </html>

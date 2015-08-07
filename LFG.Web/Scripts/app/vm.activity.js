@@ -46,7 +46,7 @@
     };
 
     var init = function(){
-        ko.applyBindings(ActivityViewModel, document.getElementById("CreateActivity-view"));
+        ko.applyBindings(ActivityViewModel, document.getElementById("createForm"));
     }
 
     return {

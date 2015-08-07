@@ -37,3 +37,8 @@ tr:nth-child(odd) {
     display:inline-block;
     color:blue;
 }
+
+.create-button {
+    width: 100%;
+    margin-bottom: 20px;
+}

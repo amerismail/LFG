@@ -24,10 +24,7 @@ namespace LFG.Web
                 "~/Scripts/lib/jquery.tablesorter.min.js",
                 "~/Scripts/app/tableSorter.js",
                 "~/Scripts/app/list_activities.js",
-                "~/Scripts/app/vm.search.js"
-                ));
-
-            bundles.Add(new ScriptBundle("~/bundles/createActivity").Include(
+                "~/Scripts/app/vm.search.js",
                 "~/Scripts/app/vm.activity.js"
                 ));
 
