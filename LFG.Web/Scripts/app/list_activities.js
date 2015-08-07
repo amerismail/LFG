@@ -1,4 +1,5 @@
-﻿    var getList = function (data) {
+﻿var listActivitiesModule = (function ($) {
+    var getList = function (data) {
         $('#loader').show();
         $.ajax({
             url: "api/activities/Search",
@@ -10,7 +11,6 @@
                 $('#loader').hide();
             },
             success: function (listOfActivities) {
-                console.log(listOfActivities);
                 updateDom(listOfActivities);
             }
         });
@@ -24,7 +24,6 @@
 
     var getTimeDifference = function (date) {
         var millis = (new Date()).getTime() - (new Date(date)).getTime();
-        console.log(millis);
 
         var seconds = parseInt(millis / 60000);
         var hours = parseInt(seconds / 60);
@@ -48,7 +47,6 @@
 
         var id = setInterval(function () {
             if ($("table#Test tbody tr").length == length) {
-                console.log("Test");
                 $("table#Test").trigger("update");
                 window.clearInterval(id);
             }
@@ -82,5 +80,15 @@
         tableSorter(jsonObj[0].length);
     }
 
-    $("#Test").tablesorter();
-    getList("");
+    var init = function () {
+        $("#Test").tablesorter();
+        getList("");
+    };
+
+    return {
+        init: init,
+        getList: getList
+    }
+})(jQuery);
+
+listActivitiesModule.init();

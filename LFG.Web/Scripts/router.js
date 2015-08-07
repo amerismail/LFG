@@ -4,7 +4,6 @@
     };
 
     var app = sammy('#main', function () {
-        console.log("Its running");
 
         this.get("#/", function (context) {
             context.render('Home.html', { 'myVariable': 'Some value' }, function (view) {
