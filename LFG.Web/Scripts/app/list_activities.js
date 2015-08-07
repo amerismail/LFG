@@ -1,4 +1,5 @@
-﻿    var getList = function (data) {
+﻿var listActivitiesModule = (function ($) {
+    var getList = function (data) {
         $('#loader').show();
         $.ajax({
             url: "api/activities/Search",
@@ -82,5 +83,15 @@
         tableSorter(jsonObj[0].length);
     }
 
-    $("#Test").tablesorter();
-    getList("");
+    var init = function () {
+        $("#Test").tablesorter();
+        getList("");
+    };
+
+    return {
+        init: init,
+        getList: getList
+    }
+})(jQuery);
+
+listActivitiesModule.init();
