@@ -32,7 +32,6 @@
 
         self.save = function () {
             var body = (ko.toJSON({ ConsoleId: this.ConsoleId, Game: this.Game, Name: this.Name, Mic: this.Mic, Owner: this.Owner }));
-            console.log(body);
             $.ajax({
                 url: "api/activities/Save",
                 contentType: 'application/json',
