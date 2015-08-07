@@ -5,11 +5,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>LFG</title>
-
     @Styles.Render(
-        "~/Scripts/lib/bootstrap-3.3.5/css/bootstrap.min.css",
-        "~/Content/app.css",
-        "~/Content/loader.css"
+        "~/Content/bootstrap-3.3.5/css/bootstrap.css",
+        "~/Content/css"
     )
 </head>
     
@@ -30,10 +28,6 @@
                         <li class="active" id="nav-home"><a href="#/">Home</a></li>
                         <li><a href="#/create">Create Activity</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -47,14 +41,6 @@
             <div class="cssload-inner cssload-three"></div>
         </div>
     </div>
-    
-    @Scripts.Render(
-        "~/Scripts/lib/jquery-2.1.4.min.js",
-        "~/Scripts/lib/knockout-3.3.0.js",
-        "~/Scripts/lib/sammy-0.7.5.min.js", 
-        "~/Scripts/router.js",
-        "~/Scripts/lib/bootstrap-3.3.5/js/bootstrap.min.js",
-        "~/Scripts/app/navbar.js"
-    )
+    @Scripts.Render("~/bundles/index")
 </body>
 </html>
