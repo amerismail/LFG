@@ -4,14 +4,19 @@
 ✓Activities will have a option for microphone or not
 ✓Each activity is associated with a game
 ✓Search Bar To search by Activity Name, Console 
-Search Bar to search by Microphone,Game
-
-
+✓Search Bar to search by Microphone,Game
+Add Dependency injection to reduce coupling using ninject or unity
+Add a tool to minimize scripts and helps create a build for production 
+Add unit test
 
 
 FrontEnd:
-Dynamic Ui to see whose joining the group and whose not
 ✓Sort table by ascending/descending
+✓Refactor the javascript to use revealing module pattern to reduce global
+Put the scripts being used in a bundle
+Use Bootstrap to organize the layout using the column system
+Fix the form for the search and create activity to look better
+
 
 
 Future Enhancements:
