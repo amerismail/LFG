@@ -1,15 +1,11 @@
 ﻿var listActivitiesModule = (function ($) {
     var getList = function (data) {
-        $('#loader').show();
         $.ajax({
             url: "api/activities/Search",
             contentType: 'application/json',
             method: "POST",
             data: data,
             dataType: "json",
-            complete: function () {
-                $('#loader').hide();
-            },
             success: function (listOfActivities) {
                 updateDom(listOfActivities);
             }
@@ -43,45 +39,51 @@
         }
     }
 
-    var tableSorter = function (length) {
-
-        var id = setInterval(function () {
-            if ($("table#Test tbody tr").length == length) {
-                $("table#Test").trigger("update");
-                window.clearInterval(id);
-            }
-        }, 50);
-    }
-
     var updateDom = function (listOfActivities) {
         var jsonObj = $.parseJSON('[' + JSON.stringify(listOfActivities) + ']');
-
         $("#activitiesList tr").remove();
 
+        var html = '<tr>';
         for (var i = 0; i < jsonObj[0].length; i++) {
-            var text = '✓';
-            if (!jsonObj[0][i].Mic)
-                text = 'X';
-
             var diff = getTimeDifference(jsonObj[0][i].CreateTS);
 
-            $('#activitiesList').append(
-                '<tr">' +
-                    '<td>' + jsonObj[0][i].GameSystem.Name + '</td>' +
-                    '<td>' + jsonObj[0][i].Game + '</td>' +
-                    '<td>' + jsonObj[0][i].Name + '</td>' +
-                    '<td>' + text + '</td>' +
-                    '<td>' + jsonObj[0][i].Owner + '</td>' +
-                    '<td>' + diff + '</td>' +
-                '</tr>'
-            )
-        }
+            if (i % 3 == 0 && i != 0) {
+                html += '</tr><tr>';
+            }
 
-        tableSorter(jsonObj[0].length);
+            html += '<td class="activity-details">';
+            html += '<span>';
+            html += '<kbd>' + jsonObj[0][i].Owner + '</kbd>&nbsp;';
+            if (jsonObj[0][i].GameSystem.Name.indexOf("Xbox") > -1) {
+                html += '<span class="xbox float-right">';
+            } else if (jsonObj[0][i].GameSystem.Name.indexOf("Play") > -1) {
+                html += '<span class="psn float-right">';
+            } else {
+                html += '<span class="pc float-right">';
+            }
+            html += jsonObj[0][i].GameSystem.Name + '</span>';
+            html += '</span><br /><br />';
+            html += '<span>';
+            html += '<span><strong>' + jsonObj[0][i].Game + '</strong></span>';
+            html += '<span>: ' + jsonObj[0][i].Name + '</span>';
+            html += '</span><br /><br />';
+            html += '<span>';
+            if (jsonObj[0][i].GameSystem.Name.indexOf("Xbox") > -1) {
+                var temp = 'https://account.xbox.com/Messages?gamerTag=' + jsonObj[0][i].Owner.replace(' ', '+');
+                html += '<a href="' + temp + '" target="_user"><i class="fa fa-envelope fa-lg fa-fw"></i></a>';
+            }
+            if (jsonObj[0][i].Mic) {
+                html += '<i class="fa fa-microphone fa-lg fa-fw"></i>';
+            }
+            html += '<span class="float-right">' + diff + '</span>';
+            html += '</span><br />';
+            html += '</td>';
+        }
+        html += '</tr>';
+        $('#activitiesList').append(html);
     }
 
     var init = function () {
-        $("#Test").tablesorter();
         getList("");
     };
 

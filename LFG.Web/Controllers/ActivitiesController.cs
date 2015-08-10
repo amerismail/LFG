@@ -24,12 +24,12 @@ namespace LFG.Web.Controllers
         // GET api/activity
         public IEnumerable<Activity> Get()
         {
-            return Uow.Activities.GetAll().OrderBy(s => s.CreateTS);
+            return Uow.Activities.GetAll().OrderByDescending(s => s.CreateTS);
         }
 
         public IEnumerable<Activity> Search(ActivitiesSearch activitiesSearch)
         {
-            IEnumerable<Activity> result = Uow.Activities.GetAll().OrderBy(s => s.CreateTS);
+            IEnumerable<Activity> result = Uow.Activities.GetAll().OrderByDescending(s => s.CreateTS);
 
             if (activitiesSearch != null)
             {

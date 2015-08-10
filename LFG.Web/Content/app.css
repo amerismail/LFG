@@ -14,14 +14,6 @@
     float: right;
 }
 
-tr:nth-child(even) {
-    background-color: rgb(196, 227, 243);
-}
-
-tr:nth-child(odd) {
-    background-color: white;
-}
-
 #Test th{
     font-weight:bold;
     cursor:pointer;
@@ -49,4 +41,38 @@ tr:nth-child(odd) {
 
 .filter-group {
     padding-bottom: 10px;
+}
+
+.activity-master-list {
+    border-spacing: 10px;
+    border-collapse: separate;
+    width: 100%;
+}
+
+.activity-details {
+    width: 33%;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+}
+
+.well-black {
+    background-color: #333;
+    padding: 10px;
+}
+
+.float-right {
+    float: right;
+}
+
+.xbox {
+    color: darkgreen;
+}
+
+.psn {
+    color: darkblue;
+}
+
+.pc {
+    color: darkgray;
 }

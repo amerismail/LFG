@@ -212,8 +212,50 @@
     <Content Include="Content\font-awesome-4.4.0\scss\_rotated-flipped.scss" />
     <Content Include="Content\font-awesome-4.4.0\scss\_stacked.scss" />
     <Content Include="Content\font-awesome-4.4.0\scss\_variables.scss" />
+    <Content Include="Scripts\app\list_activities.min.js.gz">
+      <DependentUpon>list_activities.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\list_activities.min.js.map">
+      <DependentUpon>list_activities.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\navbar.min.js.gz">
+      <DependentUpon>navbar.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\navbar.min.js.map">
+      <DependentUpon>navbar.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\scroll.min.js.gz">
+      <DependentUpon>scroll.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\scroll.min.js.map">
+      <DependentUpon>scroll.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.activity.min.js.gz">
+      <DependentUpon>vm.activity.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.activity.min.js.map">
+      <DependentUpon>vm.activity.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.search.min.js.gz">
+      <DependentUpon>vm.search.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.search.min.js.map">
+      <DependentUpon>vm.search.min.js</DependentUpon>
+    </Content>
     <None Include="Scripts\lib\jquery-2.1.0-vsdoc.js" />
+    <Content Include="Scripts\app\list_activities.min.js">
+      <DependentUpon>list_activities.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\navbar.min.js">
+      <DependentUpon>navbar.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\app\scroll.js" />
+    <Content Include="Scripts\app\scroll.min.js">
+      <DependentUpon>scroll.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.activity.min.js">
+      <DependentUpon>vm.activity.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\app\vm.search.js" />
     <Content Include="Content\bootstrap-3.3.5\css\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-3.3.5\css\bootstrap-theme.min.css" />
@@ -224,7 +266,13 @@
     <Content Include="Content\bootstrap-3.3.5\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap-3.3.5\js\npm.js" />
     <Content Include="Scripts\app\navbar.js" />
+    <Content Include="Scripts\app\vm.search.min.js">
+      <DependentUpon>vm.search.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\lib\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\lib\knockout-3.3.0.min.js">
+      <DependentUpon>knockout-3.3.0.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\lib\sammy-0.7.5.js" />
     <Content Include="Scripts\lib\sammy-0.7.5.min.js" />
     <Content Include="Scripts\router.js" />
@@ -255,6 +303,9 @@
     <Content Include="Scripts\lib\r.js" />
     <Content Include="Scripts\lib\require.js" />
     <Content Include="Scripts\app\vm.activity.js" />
+    <Content Include="Scripts\router.min.js">
+      <DependentUpon>router.js</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -276,6 +327,18 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\lib\_references.js" />
+    <Content Include="Scripts\router.min.js.gz">
+      <DependentUpon>router.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\router.min.js.map">
+      <DependentUpon>router.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\knockout-3.3.0.min.js.gz">
+      <DependentUpon>knockout-3.3.0.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\knockout-3.3.0.min.js.map">
+      <DependentUpon>knockout-3.3.0.min.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
