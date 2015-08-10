@@ -173,6 +173,7 @@
       <DependentUpon>LFG_Database.mdf</DependentUpon>
     </Content>
     <Content Include="Content\loader.css" />
+    <Content Include="Content\scroller.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Home.html" />
@@ -180,6 +181,7 @@
     <Content Include="Content\app.css" />
     <Content Include="Scripts\app\list_activities.js" />
     <None Include="Scripts\lib\jquery-2.1.0-vsdoc.js" />
+    <Content Include="Scripts\app\scroll.js" />
     <Content Include="Scripts\app\vm.search.js" />
     <Content Include="Content\bootstrap-3.3.5\css\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-3.3.5\css\bootstrap-theme.min.css" />
