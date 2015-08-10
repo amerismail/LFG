@@ -67,13 +67,17 @@
         <div class="well">
             <form class="form-inline" name="filterForm">
                 <fieldset>
-                    <div class="form-group-sm">
-                        <select class="form-control" id="gamesystem-selector" data-bind="options: consoleList,
+                    <div class="form-group-sm filter-group">
+                        <span>
+                            <select class="form-control filter-item" id="gamesystem-selector" data-bind="options: consoleList,
                                                                                                     optionsText: 'name',
                                                                                                     optionsValue: 'id',
                                                                                                     value: consoleId"></select>
-                        <input class="form-control" id="game" placeholder="Game" data-bind="value: game">
-                        <input class="form-control" id="name" placeholder="Activity" data-bind="value: name">
+                            <input class="form-control filter-item" id="game" placeholder="Game" data-bind="value: game">
+                            <input class="form-control filter-item" id="name" placeholder="Activity" data-bind="value: name">
+                        </span>
+                    </div>
+                    <div class="form-group-sm filter-group">
                         <label>
                             <input class="" type="checkbox" id="microphone" data-bind="checked: microphone">
                             <span class="checkbox-text">Mic?</span>
