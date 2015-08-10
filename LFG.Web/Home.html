@@ -65,37 +65,22 @@
 
     <div id="Search">
         <div class="well">
-            <form class="form-horizontal" name="filterForm">
+            <form class="form-inline" name="filterForm">
                 <fieldset>
                     <div class="form-group-sm">
-                        <label class="col-md-2 control-label" for="gamesystem-selector">Platform</label>
-                        <div class="col-md-10">
-                            <select class="form-control" id="gamesystem-selector" data-bind="options: consoleList,
-                                                                                                        optionsText: 'name',
-                                                                                                        optionsValue: 'id',
-                                                                                                        value: consoleId"></select>
-                        </div>
-                    </div>
-                    <div class="form-group-sm">
-                        <label class="col-md-2 control-label" for="game">Game</label>
-                        <div class="col-md-10">
-                            <input class="form-control" id="game" placeholder="Game" data-bind="value: game">
-                        </div>
-                    </div>
-                    <div class="form-group-sm">
-                        <label class="col-md-2 control-label" for="name">Activity</label>
-                        <div class="col-md-10">
-                            <input class="form-control" id="name" placeholder="Activity" data-bind="value: name">
-                        </div>
-                    </div>
-                    <div class="form-group-sm">
-                        <label class="col-md-2 control-label" for="microphone">Microphone</label>
-                        <div class="col-md-10">
-                            <input type="checkbox" id="microphone" data-bind="checked: microphone">
-                            <div class="pull-right">
-                                <button type="submit" class="btn btn-info" data-bind="click: search">Search</button>
-                                <button type="submit" class="btn btn-default">Clear</button>
-                            </div>
+                        <select class="form-control" id="gamesystem-selector" data-bind="options: consoleList,
+                                                                                                    optionsText: 'name',
+                                                                                                    optionsValue: 'id',
+                                                                                                    value: consoleId"></select>
+                        <input class="form-control" id="game" placeholder="Game" data-bind="value: game">
+                        <input class="form-control" id="name" placeholder="Activity" data-bind="value: name">
+                        <label>
+                            <input class="" type="checkbox" id="microphone" data-bind="checked: microphone">
+                            <span class="checkbox-text">Mic?</span>
+                        </label>
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-info" data-bind="click: search">Search</button>
+                            <button type="submit" class="btn btn-default">Clear</button>
                         </div>
                     </div>
                 </fieldset>

@@ -6,7 +6,7 @@
     }
 
     var getConsoleData = function () {
-        var array = [new GameSystem({ Id: -1, Name: "" })];
+        var array = [new GameSystem({ Id: -1, Name: "Platform (All)" })];
         $.ajax({
             async: false,
             url: "api/gamesystems",
