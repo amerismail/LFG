@@ -9,7 +9,9 @@ namespace LFG.Web
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/app.css", 
-                "~/Content/loader.css"));
+                "~/Content/loader.css",
+                "~/Content/scroller.css"
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/index").Include(
                 "~/Scripts/lib/jquery-2.1.4.min.js",
@@ -23,9 +25,11 @@ namespace LFG.Web
             bundles.Add(new ScriptBundle("~/bundles/home").Include(
                 "~/Scripts/lib/jquery.tablesorter.min.js",
                 "~/Scripts/app/tableSorter.js",
+                "~/Scripts/lib/jquery.twbsPagination.min.js",
                 "~/Scripts/app/list_activities.js",
                 "~/Scripts/app/vm.search.js",
-                "~/Scripts/app/vm.activity.js"
+                "~/Scripts/app/vm.activity.js",
+                "~/Scripts/app/scroll.js"
                 ));
 
            BundleTable.EnableOptimizations = true;
