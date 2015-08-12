@@ -1,17 +1,4 @@
-﻿var listActivitiesModule = (function ($) {
-    var getList = function (data) {
-        $.ajax({
-            url: "api/activities/Search",
-            contentType: 'application/json',
-            method: "POST",
-            data: data,
-            dataType: "json",
-            success: function (listOfActivities) {
-                updateDom(listOfActivities);
-            }
-        });
-    }
-
+﻿var listActivitiesModule = (function ($, dataModule) {
     var stringEnding = function (number) {
         if (number > 1)
             return 's';
@@ -83,14 +70,8 @@
         $('#activitiesList').append(html);
     }
 
-    var init = function () {
-        getList("");
-    };
-
     return {
-        init: init,
-        getList: getList
+        updateDom: updateDom
     }
-})(jQuery);
+})(jQuery, dataModule);
 
-listActivitiesModule.init();

@@ -1,10 +1,4 @@
-﻿var activityModule = (function ($, ko) {
-    var GameSystem = function (data) {
-        var self = this;
-        self.id = ko.observable(data.Id);
-        self.name = ko.observable(data.Name);
-    }
-
+﻿var activityModule = (function ($, ko, dataModule) {
     var ActivityViewModel = function () {
         var self = this;
 
@@ -14,35 +8,12 @@
         self.Mic = ko.observable();
         self.Owner = ko.observable();
 
-        self.GameSystemArray = ko.observableArray([]);
-
-        $.ajax({
-            url: "api/gamesystems",
-            contentType: 'application/json',
-            method: "GET",
-            dataType: "json",
-            success: function (json) {
-                var array = [];
-                $.each(json, function (index, value) {
-                    array.push(new GameSystem(value));
-                });
-                self.GameSystemArray(array);
-            }
-        });
+        self.GameSystemArray = ko.observableArray(dataModule.getConsoles());
 
         self.save = function () {
             var body = (ko.toJSON({ ConsoleId: this.ConsoleId, Game: this.Game, Name: this.Name, Mic: this.Mic, Owner: this.Owner }));
-            $.ajax({
-                url: "api/activities/Save",
-                contentType: 'application/json',
-                method: "POST",
-                data: body,
-                dataType: "json",
-                success: function () {
-                    window.location.replace("#/");
-                }
-            });
-        }
+            dataModule.postActivity(body);
+        };
     };
 
     var init = function(){
@@ -52,5 +23,5 @@
     return {
         init: init
     };
-})(jQuery, ko);
+})(jQuery, ko , dataModule);
 activityModule.init();

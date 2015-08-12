@@ -25,6 +25,7 @@ namespace LFG.Web
             bundles.Add(new ScriptBundle("~/bundles/home").Include(
                 "~/Scripts/lib/jquery.tablesorter.min.js",
                 "~/Scripts/app/list_activities.min.js",
+                "~/Scripts/app/dataService.min.js",
                 "~/Scripts/app/vm.search.min.js",
                 "~/Scripts/app/vm.activity.min.js",
                 "~/Scripts/app/scroll.min.js"

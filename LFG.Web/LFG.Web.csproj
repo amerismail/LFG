@@ -180,6 +180,10 @@
     <Content Include="Home.html" />
     <Content Include="index.cshtml" />
     <Content Include="Content\app.css" />
+    <Content Include="Scripts\app\dataService.js" />
+    <Content Include="Scripts\app\dataService.min.js">
+      <DependentUpon>dataService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\app\list_activities.js" />
     <Content Include="Content\font-awesome-4.4.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\font-awesome-4.4.0\fonts\fontawesome-webfont.ttf" />
@@ -241,6 +245,9 @@
     </Content>
     <Content Include="Scripts\app\vm.search.min.js.map">
       <DependentUpon>vm.search.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataService.min.js.map">
+      <DependentUpon>dataService.min.js</DependentUpon>
     </Content>
     <None Include="Scripts\lib\jquery-2.1.0-vsdoc.js" />
     <Content Include="Scripts\app\list_activities.min.js">
@@ -309,6 +316,7 @@
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>

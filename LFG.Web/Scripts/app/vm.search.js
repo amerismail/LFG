@@ -1,53 +1,31 @@
-﻿var searchModule = (function ($, ko, listActivitiesModule) {
-    var GameSystem = function (data) {
+﻿var searchModule = (function ($, ko, listActivitiesModule, dataModule) {
+    var ActivitySearchViewModel = function () {
         var self = this;
-        self.id = ko.observable(data.Id);
-        self.name = ko.observable(data.Name);
-    }
-
-    var getConsoleData = function () {
-        var array = [new GameSystem({ Id: -1, Name: "Platform (All)" })];
-        $.ajax({
-            async: false,
-            url: "api/gamesystems",
-            contentType: 'application/json',
-            method: "GET",
-            dataType: "json",
-            success: function (json) {
-                $.each(json, function (index, value) {
-                    array.push(new GameSystem(value));
-                });
-            }
+        var consoles = [{name: "Platform (All)", id: -1 }];
+        dataModule.getConsoles().forEach(function (console) {
+            consoles.push(console);
         });
-        return array;
-    }
 
+        self.activity = ko.observable();
+        self.consoleList = ko.observableArray(consoles);
+        self.consoleId = ko.observable();
+        self.microphone = ko.observable();
+        self.game = ko.observable();
 
-    var ActivitySearchViewModel = {
-        name: ko.observable(),
-        consoleList: ko.observableArray(getConsoleData()),
-        consoleId: ko.observable(),
-        microphone: ko.observable(),
-        game: ko.observable(),
-
-        search: function () {
-            search(ko.toJSON({ Name: this.name, ConsoleId: this.consoleId, Game: this.game, Microphone: this.microphone }));
-        }
-    };
-
-
-    var search = function (data) {
-        listActivitiesModule.getList(data);
+        self.search = function () {
+            var data = ko.toJSON({ Name: this.activity, ConsoleId: this.consoleId, Game: this.game, Microphone: this.microphone });
+            dataModule.getActivities(data);
+        };
     };
 
     var init = function () {
-        getConsoleData();
         ko.applyBindings(ActivitySearchViewModel, document.getElementById("Search"));
     };
 
     return {
         init: init
     };
-})(jQuery, ko, listActivitiesModule);
+
+})(jQuery, ko, listActivitiesModule, dataModule);
 
 searchModule.init();
